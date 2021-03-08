@@ -13,29 +13,27 @@ namespace SimpleViewModel2.ViewModels
 
 	    #region Property Changing Variables
 
-	    // Window's name
-	    private string _windowName;
-        public string windowName {    get { return _windowName; } set { _windowName = value; RaisePropertyChanged(); }  }
+	        // Window's name
+	        private string _windowName;
+            public string windowName {    get { return _windowName; } set { _windowName = value; RaisePropertyChanged(); }  }
 
-        #region Commands
+           #region Commands
+             // Choose file
+             private ICommand _openFileCmd;
+             public ICommand openFileCmd {   get { return _openFileCmd; } set { _openFileCmd = value; RaisePropertyChanged(); }  }
 
-        // Choose file
-        private ICommand _openFileCmd;
-        public ICommand openFileCmd {   get { return _openFileCmd; } set { _openFileCmd = value; RaisePropertyChanged(); }  }
+             // Save selected file
+             private ICommand _saveFileCmd;
+             public ICommand saveFileCmd {   get { return _saveFileCmd; } set { _saveFileCmd = value; RaisePropertyChanged(); }  }
+	       #endregion
 
-        // Save selected file
-        private ICommand _saveFileCmd;
-        public ICommand saveFileCmd {   get { return _saveFileCmd; } set { _saveFileCmd = value; RaisePropertyChanged(); }  }
+	        // Selected file
+	        private string _selectedFile;
+            public string selectedFile {    get { return _selectedFile; } set { _selectedFile = value; RaisePropertyChanged(); }    }
 
-	    #endregion
-
-	    // Selected file
-	    private string _selectedFile;
-        public string selectedFile {    get { return _selectedFile; } set { _selectedFile = value; RaisePropertyChanged(); }    }
-
-        // Text from last read file
-        private string _fileText;
-        public string fileText {    get { return _fileText; } set { _fileText = value; RaisePropertyChanged(); }   }
+            // Text from last read file
+            private string _fileText;
+            public string fileText {    get { return _fileText; } set { _fileText = value; RaisePropertyChanged(); }   }
 
 	    #endregion
 
