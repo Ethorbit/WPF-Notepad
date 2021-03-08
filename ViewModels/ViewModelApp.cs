@@ -17,15 +17,15 @@ namespace SimpleViewModel2.ViewModels
 	        private string _windowName;
             public string windowName {    get { return _windowName; } set { _windowName = value; RaisePropertyChanged(); }  }
 
-           #region Commands
-             // Choose file
-             private ICommand _openFileCmd;
-             public ICommand openFileCmd {   get { return _openFileCmd; } set { _openFileCmd = value; RaisePropertyChanged(); }  }
+            #region Commands
+                // Choose file
+                private ICommand _openFileCmd;
+                public ICommand openFileCmd {   get { return _openFileCmd; } set { _openFileCmd = value; RaisePropertyChanged(); }  }
 
-             // Save selected file
-             private ICommand _saveFileCmd;
-             public ICommand saveFileCmd {   get { return _saveFileCmd; } set { _saveFileCmd = value; RaisePropertyChanged(); }  }
-	       #endregion
+                // Save selected file
+                private ICommand _saveFileCmd;
+                public ICommand saveFileCmd {   get { return _saveFileCmd; } set { _saveFileCmd = value; RaisePropertyChanged(); }  }
+	        #endregion
 
 	        // Selected file
 	        private string _selectedFile;
