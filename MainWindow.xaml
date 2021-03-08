@@ -1,0 +1,38 @@
+﻿<Window x:Class="SimpleViewModel2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="clr-namespace:SimpleViewModel2"
+        xmlns:viewmodels="clr-namespace:SimpleViewModel2.ViewModels"
+        mc:Ignorable="d"
+        Title="{Binding windowName}" Height="500" Width="500">
+	<Window.DataContext>
+		<viewmodels:App />
+    </Window.DataContext>
+
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="30"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!-- Window Toolbar -->
+		<ToolBarTray IsLocked="True">
+			<ToolBar Grid.Row="0" OverflowMode="Never">
+				<Button Width="25" Height="25" Padding="0" Command="{Binding openFileCmd}">
+					<Image Source="pack://application:,,,/Images/folder.png"/>
+				</Button>
+
+				<Button Width="25" Height="25" Command="{Binding saveFileCmd}" CommandParameter="{Binding ElementName=FileTextBox, Path=Text}">
+					<Image Source="pack://application:,,,/Images/save.png"/>
+				</Button>
+			</ToolBar>
+		</ToolBarTray>
+
+		<!-- Text Document Editor -->
+		<Grid Grid.Row="1" Margin="1">
+			<TextBox Name="FileTextBox" xml:space="preserve" AcceptsReturn="True" AcceptsTab="True" Text="{Binding fileText}" TextWrapping="Wrap" FontSize="15" VerticalScrollBarVisibility="Visible"/>
+		</Grid>
+	</Grid>
+</Window>
