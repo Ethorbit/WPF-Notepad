@@ -31,10 +31,5 @@ namespace SimpleViewModel2.Commands
             else
                 this.executeBlank();
         }
-
-        //public void Execute()
-        //{
-        //    this.executeBlank();
-        //}
     }
 }
