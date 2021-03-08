@@ -7,7 +7,7 @@ namespace SimpleViewModel2.ViewModels
 
         public void RaisePropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string caller = "")
         {
-            PropertyChanged(this, new PropertyChangedEventArgs(caller));
+            this.PropertyChanged(this, new PropertyChangedEventArgs(caller));
         }
     }
 }

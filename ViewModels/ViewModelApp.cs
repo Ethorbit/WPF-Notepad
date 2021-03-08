@@ -39,10 +39,10 @@ namespace SimpleViewModel2.ViewModels
 
 		public App()
         {
-            windowName = originalWindowName;
-            fileText = "";
-            openFileCmd = new RelayCommand(ChooseFile);
-            saveFileCmd = new RelayCommand(SaveFile);
+            this.windowName = originalWindowName;
+            this.fileText = "";
+            this.openFileCmd = new RelayCommand(ChooseFile);
+            this.saveFileCmd = new RelayCommand(SaveFile);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace SimpleViewModel2.ViewModels
         /// </summary>
         private void ChangeWindowName(string name = "")
         {
-            windowName = $"{originalWindowName} - {name}";
+            this.windowName = $"{originalWindowName} - {name}";
         }
 
         /// <summary>
@@ -108,12 +108,12 @@ namespace SimpleViewModel2.ViewModels
 
             if (filePick.ShowDialog() == true)
 			{
-                selectedFile = filePick.FileName;
+                this.selectedFile = filePick.FileName;
 
                 try
                 {
-                    LoadFile(selectedFile);
-                    ChangeWindowName(Path.GetFileName(selectedFile)); // <App name> - something.txt
+                    LoadFile(this.selectedFile);
+                    ChangeWindowName(Path.GetFileName(this.selectedFile)); // <App name> - something.txt
                 }
                 catch (Exception e)
                 {
